@@ -21,7 +21,7 @@ local T = ffiutil.template
 
 local path = DataStorage:getFullDataDir()
 if not util.pathExists("dropbear") then
-    return { disabled = true, }
+    logger.warn("[Syncthing] dropbear SSH not found")
 end
 
 local Syncthing = WidgetContainer:extend{
@@ -30,8 +30,8 @@ local Syncthing = WidgetContainer:extend{
 }
 
 local pid_path = "/tmp/syncthing_koreader.pid"
-local config_path = "settings/syncthing/config.xml"
-local device_id_path = "settings/syncthing/device-id"
+local config_path = path.."settings/syncthing/config.xml"
+local device_id_path = path.."settings/syncthing/device-id"
 
 function Syncthing:init()
     self.syncthing_port = G_reader_settings:readSetting("syncthing_port") or "8384"
@@ -46,7 +46,7 @@ function Syncthing:start(password)
         password = random.uuid()
     end
     local cmd = string.format("%s %s %s %s",
-        "./plugins/syncthing.koplugin/start-syncthing",
+        path.."/plugins/syncthing.koplugin/start-syncthing",
         G_reader_settings:readSetting("home_dir"),
         self.syncthing_port,
         password or "")

@@ -2,8 +2,9 @@
 set -e
 
 # Save config and data under the KOReader runtime directory
-config_dir=settings/syncthing
-syncthing=plugins/syncthing.koplugin/syncthing
+my_dir=$(realpath $0 |sed -u -e 's/\/[^\/]*$//')
+config_dir=${my_dir}/../../settings/syncthing
+syncthing=${my_dir}/syncthing
 pid_file=/tmp/syncthing_koreader.pid
 
 if [ -n "$1" ]; then
