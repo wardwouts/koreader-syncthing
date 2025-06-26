@@ -9,6 +9,8 @@ instance on your e-reader can be managed directly in the KOReader menu.
 
 The method of running Syncthing is originally based on [The Anarcat's blog post](https://anarc.at/hardware/tablet/kobo-clara-hd/#install-syncthing).
 
+This version should work on ARM32 and on AMD64 hardware.
+
 ## Project status
 
 - This plugin has not been widely tested. Make frequent data backups and use it
@@ -85,7 +87,7 @@ wget -O /etc/ssl/certs/ca-certificates.crt https://curl.se/ca/cacert.pem
 
 - Syncthing binaries are included in the repository from the [official
   releases](https://syncthing.net/downloads/)
-  - Using Linux ARM 32-bit binary
+  - Using Linux ARM 32-bit and AMD64 binary
 
 ## Limitations
 
