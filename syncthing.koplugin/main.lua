@@ -155,7 +155,7 @@ function Syncthing:show_port_dialog(touchmenu_instance)
                     is_enter_default = true,
                     callback = function()
                         local value = tonumber(self.port_dialog:getInputText())
-                        if value and value >= 0 then
+                        if value and value >= 0 and value <= 65535 then
                             self.syncthing_port = value
                             G_reader_settings:saveSetting("syncthing_port", self.syncthing_port)
                             UIManager:close(self.port_dialog)
