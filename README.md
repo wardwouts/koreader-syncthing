@@ -40,7 +40,7 @@ wget -O /etc/ssl/certs/ca-certificates.crt https://curl.se/ca/cacert.pem
 
 ### Install plugin
 
-1.  Download the [latest ZIP from GitHub](https://github.com/jasonchoimtt/koreader-syncthing/archive/refs/heads/main.zip)
+1.  Download the [latest ZIP from GitHub](https://github.com/wardwouts/koreader-syncthing/archive/refs/heads/main.zip)
     and extract the archive.
 2.  Copy the folder `syncthing.koplugin` to your KOReader installation, under
     the `plugins` folder. For Kobo devices, this is usually
