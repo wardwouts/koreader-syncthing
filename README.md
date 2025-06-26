@@ -1,5 +1,7 @@
 # Syncthing plugin for KOReader
 
+Forked from https://github.com/jasonchoimtt/koreader-syncthing which seems unmaintained.
+
 This is a plugin for running Syncthing on e-readers running KOReader. Syncthing
 is a peer-to-peer file synchronization program. This makes it possible to sync
 files between your e-reader and computer / phone automatically. The Syncthing
@@ -27,7 +29,8 @@ The method of running Syncthing is originally based on [The Anarcat's blog post]
 ### Install certificates
 This is needed to make global discovery work.
 
-The global discovery and relay work if you add a missing certificate file. You can use the Koreader terminal emulator in a Kobo device to add the file. That means that be possible to sync the device over the internet:
+You can use the Koreader terminal emulator in a Kobo device to add the file.
+That means that be possible to sync the device over the internet:
 
 Open a terminal emulator session:
 ```shell
