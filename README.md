@@ -28,18 +28,6 @@ This version should work on ARM32 and on AMD64 hardware.
 - You need to setup Syncthing on another device, which will be able to connect
   to your e-reader in your local Wi-Fi network.
 
-### Install certificates
-This is needed to make global discovery work.
-
-You can use the Koreader terminal emulator in a Kobo device to add the file.
-That means that be possible to sync the device over the internet:
-
-Open a terminal emulator session:
-```shell
-mkdir /etc/ssl/certs/
-wget -O /etc/ssl/certs/ca-certificates.crt https://curl.se/ca/cacert.pem
-```
-
 ### Install plugin
 
 1.  Download the [latest ZIP from GitHub](https://github.com/wardwouts/koreader-syncthing/archive/refs/heads/main.zip)
@@ -91,8 +79,6 @@ wget -O /etc/ssl/certs/ca-certificates.crt https://curl.se/ca/cacert.pem
 
 ## Limitations
 
-- Currently, global discovery and relay is not working. That means it will not
-  be possible to sync devices over the internet.
 - The Syncthing menu is still limited in functionality when it comes to managing
   devices and folders.
 

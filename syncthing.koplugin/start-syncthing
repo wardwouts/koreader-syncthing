@@ -28,6 +28,13 @@ if [ -n "$3" ]; then
     password=$3
 fi
 
+if [ ! -d /etc/ssl/certs ]; then
+    mkdir -p /etc/ssl/certs
+fi
+if [ ! -f /etc/ssl/certs/ca-certificates.crt ]; then
+    wget -O /etc/ssl/certs/ca-certificates.crt https://curl.se/ca/cacert.pem
+fi
+
 if [ ! -f "$config_dir/config.xml" ] || [ -n "$password" ]; then
     echo "Generating Syncthing configuration..."
     # Set HOME so that the default folder is created at $home_dir/Sync
