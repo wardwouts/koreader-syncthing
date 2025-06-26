@@ -11,8 +11,7 @@ The method of running Syncthing is originally based on [The Anarcat's blog post]
 
 - This plugin has not been widely tested. Make frequent data backups and use it
   at your own risk!
-- Tested on Kobo Libra 2
-- Some features are not working yet, such as global discovery service
+- Tested on Kobo Sage
 
 ## Installation
 
@@ -24,6 +23,17 @@ The method of running Syncthing is originally based on [The Anarcat's blog post]
 - You should have installed KOReader and will need to copy files to the device.
 - You need to setup Syncthing on another device, which will be able to connect
   to your e-reader in your local Wi-Fi network.
+
+### Install certificates
+This is needed to make global discovery work.
+
+The global discovery and relay work if you add a missing certificate file. You can use the Koreader terminal emulator in a Kobo device to add the file. That means that be possible to sync the device over the internet:
+
+Open a terminal emulator session:
+```shell
+mkdir /etc/ssl/certs/
+wget -O /etc/ssl/certs/ca-certificates.crt https://curl.se/ca/cacert.pem
+```
 
 ### Install plugin
 
