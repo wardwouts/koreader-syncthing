@@ -71,9 +71,9 @@ function Syncthing:start(password)
         os.execute(string.format("%s %s %s",
             "iptables -A OUTPUT -p tcp --sport", self.syncthing_port,
             "-m conntrack --ctstate ESTABLISHED -j ACCEPT"))
-	os.execute("iptables -A INPUT -i wlan0 -p tcp --dport 22000 -j ACCEPT")
-	os.execute("iptables -A INPUT -i wlan0 -p udp --dport 22000 -j ACCEPT")
-	os.execute("iptables -A INPUT -i wlan0 -p udp --dport 21027 -j ACCEPT")
+        os.execute("iptables -A INPUT -i wlan0 -p tcp --dport 22000 -j ACCEPT")
+        os.execute("iptables -A INPUT -i wlan0 -p udp --dport 22000 -j ACCEPT")
+        os.execute("iptables -A INPUT -i wlan0 -p udp --dport 21027 -j ACCEPT")
     end
 
     if not util.pathExists(path.."/settings/syncthing/") then
