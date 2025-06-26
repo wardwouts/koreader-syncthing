@@ -1,6 +1,6 @@
 # Syncthing plugin for KOReader
 
-Forked from https://github.com/jasonchoimtt/koreader-syncthing which seems unmaintained.
+*Forked from https://github.com/jasonchoimtt/koreader-syncthing which seems unmaintained.*
 
 This is a plugin for running Syncthing on e-readers running KOReader. Syncthing
 is a peer-to-peer file synchronization program. This makes it possible to sync
@@ -96,8 +96,6 @@ wget -O /etc/ssl/certs/ca-certificates.crt https://curl.se/ca/cacert.pem
 
 ## TODO
 
-- [ ] Pull latest syncthing binary from official releases
 - [ ] Allow adding device to folder from e-reader
 - [ ] Properly accept three-way sharing
-- [ ] Fix global discovery service functionality
 - [ ] Implement conflict resolution for KOReader metadata file
