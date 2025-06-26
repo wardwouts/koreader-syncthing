@@ -45,7 +45,7 @@ function Syncthing:start(password)
         -- user explicitly sets a password
         password = random.uuid()
     end
-    local cmd = string.format("%s %s %s %s",
+    local cmd = string.format("/bin/sh \"%s\" \"%s\" \"%s\" \"%s\"",
         path.."/plugins/syncthing.koplugin/start-syncthing",
         G_reader_settings:readSetting("home_dir"),
         self.syncthing_port,
@@ -121,9 +121,9 @@ function Syncthing:stop()
         os.execute(string.format("%s %s %s",
             "iptables -D OUTPUT -p tcp --sport", self.syncthing_port,
             "-m conntrack --ctstate ESTABLISHED -j ACCEPT"))
-	os.execute("iptables -D INPUT -i wlan0 -p tcp --dport 22000 -j ACCEPT")
-	os.execute("iptables -D INPUT -i wlan0 -p udp --dport 22000 -j ACCEPT")
-	os.execute("iptables -D INPUT -i wlan0 -p udp --dport 21027 -j ACCEPT")
+        os.execute("iptables -D INPUT -i wlan0 -p tcp --dport 22000 -j ACCEPT")
+        os.execute("iptables -D INPUT -i wlan0 -p udp --dport 22000 -j ACCEPT")
+        os.execute("iptables -D INPUT -i wlan0 -p udp --dport 21027 -j ACCEPT")
     end
 end
 
