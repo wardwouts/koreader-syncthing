@@ -4,11 +4,11 @@ set -e
 # Save config and data under the KOReader runtime directory
 my_dir=$(realpath "$0" |sed -e 's/\/[^\/]*$//')
 config_dir=${my_dir}/../../settings/syncthing
-syncthing=${my_dir}/syncthing
+syncthing=${my_dir}/syncthing-arm32
 pid_file=/tmp/syncthing_koreader.pid
 arch=$(uname -m)
 if [ "$arch" = "x86_64" ]; then
-    syncthing=${my_dir}/syncthing-x86_64
+    syncthing=${my_dir}/syncthing-amd64
 fi
 
 if [ -n "$1" ]; then
