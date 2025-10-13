@@ -65,7 +65,7 @@ function Syncthing:start(password)
     end
 
     -- Start loopback interface so that we can access the Syncthing API later
-    if Device:isPocketbook() then
+    if Device:isPocketBook() then
         if os.execute("sudo ifconfig lo up") ~= 0 then
             local info = InfoMessage:new{
                     icon = "notice-warning",
