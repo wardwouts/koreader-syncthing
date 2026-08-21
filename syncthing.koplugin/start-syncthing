@@ -7,6 +7,10 @@ config_dir=${my_dir}/../../settings/syncthing
 syncthing=${my_dir}/syncthing-arm32
 pid_file=/tmp/syncthing_koreader.pid
 arch=$(uname -m)
+
+# Prevent automatic upgrades (which don't work on pocketbook at least)
+export STNOUPGRADE=true
+
 if [ "$arch" = "x86_64" ]; then
     syncthing=${my_dir}/syncthing-amd64
 fi
